@@ -55,8 +55,8 @@ gcloud config set project $PROJECT_ID
 4. Create a GCS bucket for Terraform backend
 
 ```
-BUCKENT_NAME=<bucket-name>
-BUCKENT_LOCATION=<bucket-location>
+BUCKENT_NAME=<bucket_name>
+BUCKENT_LOCATION=<bucket_location>
 gcloud storage buckets create gs://$BUCKENT_NAME --project $PROJECT_ID --location $BUCKENT_LOCATION
 ```
 
@@ -72,19 +72,21 @@ terraform -v
 5.2 Initialize Terraform
 
 ```
-terraform init -backend-config="bucket=${BUCKENT_NAME}" -backend-config="prefix=${PROJECT_ID}/state" 
+terraform init \
+  -backend-config="bucket=${BUCKENT_NAME}" \
+  -backend-config="prefix=${PROJECT_ID}/state" 
 ```
 
 
-5.3 Check GCS
+5.3 Verify GCS bucket
 
 ```
 gsutil ls -p $PROJECT_ID gs://${BUCKENT_NAME}/${PROJECT_ID}/state
 ```
 
-You’ll see gs:// <bucket-name>/<project_id>/state/default.tfstate file
+You’ll see gs://<bucket_name>/<project_id>/state/default.tfstate file
 
-5.4 Plan and apply
+5.4 Terraform plan and apply
 
 ```
 terraform plan
