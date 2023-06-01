@@ -97,6 +97,6 @@ Contributions are welcome! If you encounter any issues, have ideas for improveme
 
 
 ## Resources
-[GitHub Actions Documentation](https://docs.github.com/en/actions)
-[Google Cloud Platform Documentation](https://cloud.google.com/docs)
-[Terraform Documentation](https://developer.hashicorp.com/terraform/docs)
+* [GitHub Actions Documentation](https://docs.github.com/en/actions)
+* [Google Cloud Platform Documentation](https://cloud.google.com/docs)
+* [Terraform Documentation](https://developer.hashicorp.com/terraform/docs)
