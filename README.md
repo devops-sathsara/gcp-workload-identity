@@ -82,7 +82,7 @@ terraform init -backend-config="bucket=${BUCKENT_NAME}" -backend-config="prefix=
 gsutil ls -p $PROJECT_ID gs://${BUCKENT_NAME}/${PROJECT_ID}/state
 ```
 
-You’ll see gs://<bucket-name>/<project_id>/state/default.tfstate file.
+You’ll see gs://<bucket-name>/<project_id>/state/default.tfstate file
 
 5.4 Plan and apply
 
