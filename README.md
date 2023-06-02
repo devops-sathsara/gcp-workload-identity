@@ -93,6 +93,12 @@ terraform plan
 terraform apply
 ```
 
+5.5. Get Terraform output
+
+```
+terraform output
+```
+
 
 ## Contribution
 Contributions are welcome! If you encounter any issues, have ideas for improvements, or would like to add new features, please submit a pull request. Make sure to follow the existing coding style and provide clear commit messages.
