@@ -5,7 +5,9 @@
 
 
 ## Introduction
-Identity Federation for GitHub Actions allows you to authenticate and authorize GitHub Actions workflows to interact with your GCP resources. This integration ensures that only trusted actions and workflows can access your sensitive GCP infrastructure.
+Identity Federation for GitHub Actions allows you to authenticate and authorize GitHub Actions workflows to interact with your GCP resources without needing to manage long-lived service account keys. Instead, it uses short-lived credentials generated through a trust relationship established between Google Cloud and GitHub Actions.
+
+This integration ensures that only trusted actions and workflows can access your sensitive GCP infrastructure.
 
 This repository provides a Terraform configuration that sets up the necessary resources in your GCP project, including service accounts, roles, and policies, to enable Identity Federation for GitHub Actions.
 
