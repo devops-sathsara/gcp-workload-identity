@@ -36,15 +36,19 @@ PROJECT_ID=<project_id>
 gcloud projects create $PROJECT_ID
 ```
 
+2. List  the GCP billing accounts
+```
+gcloud billing accounts list
+```
 
-2. Link GCP project to the billing account
+3. Link GCP project to the billing account
 
 ```
 gcloud alpha billing accounts projects link $PROJECT_ID --billing-account=0X0X0X-0X0X0X-0X0X0X
 ```
 
 
-3. Set up gcloud CLI for the new GCP project
+4. Set up gcloud CLI for the new GCP project
 
 ```
 gcloud auth application-default login --project $PROJECT_ID
@@ -52,7 +56,7 @@ gcloud config set project $PROJECT_ID
 ```
 
 
-4. Create a GCS bucket for Terraform backend
+5. Create a GCS bucket for Terraform backend
 
 ```
 BUCKENT_NAME=<bucket_name>
@@ -60,16 +64,16 @@ BUCKENT_LOCATION=<bucket_location>
 gcloud storage buckets create gs://$BUCKENT_NAME --project $PROJECT_ID --location $BUCKENT_LOCATION
 ```
 
-5. Apply Terraform codes
+6. Apply Terraform codes
 
-5.1 Check the Terraform version:
+6.1 Check the Terraform version:
 
 ```
 terraform -v
 ```
 
 
-5.2 Initialize Terraform
+6.2 Initialize Terraform
 
 ```
 terraform init \
@@ -78,7 +82,7 @@ terraform init \
 ```
 
 
-5.3 Verify GCS bucket
+6.3 Verify GCS bucket
 
 ```
 gsutil ls -p $PROJECT_ID gs://${BUCKENT_NAME}/${PROJECT_ID}/state
@@ -86,14 +90,14 @@ gsutil ls -p $PROJECT_ID gs://${BUCKENT_NAME}/${PROJECT_ID}/state
 
 You’ll see gs://<bucket_name>/<project_id>/state/default.tfstate file
 
-5.4 Terraform plan and apply
+6.4 Terraform plan and apply
 
 ```
 terraform plan
 terraform apply
 ```
 
-5.5. Get Terraform output
+6.5. Get Terraform output
 
 ```
 terraform output
