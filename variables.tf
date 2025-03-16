@@ -21,6 +21,7 @@ variable "enabled_apis" {
     "cloudresourcemanager.googleapis.com", # Cloud Resource Manager API
     "sts.googleapis.com",                  # Security Token Service API
     "compute.googleapis.com",              # Compute API
+    "container.googleapis.com"             # Kubernetes Engine API
 
     # You can add more apis to enable in the project
   ]
