@@ -41,6 +41,7 @@ resource "google_project_iam_member" "roles" {
   for_each = {
     "roles/resourcemanager.projectIamAdmin" = "roles/resourcemanager.projectIamAdmin",
     "roles/editor"                          = "roles/editor",
+    "roles/container.admin"                 = "roles/container.admin",
   }
   role   = each.value
   member = "serviceAccount:${google_service_account.github_actions.email}"
